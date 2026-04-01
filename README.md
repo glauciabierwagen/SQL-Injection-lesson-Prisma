@@ -91,6 +91,7 @@ Paste these into the **Unsafe** panel to see SQL injection in action:
 ```
 ' OR '1'='1
 ```
+![Unsafe SQL](../SQL-Injection-lesson-Prisma/frontend/src/assets/unsafe1.png)
 
 Returns all users.
 
