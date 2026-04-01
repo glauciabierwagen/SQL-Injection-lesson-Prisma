@@ -91,9 +91,10 @@ Paste these into the **Unsafe** panel to see SQL injection in action:
 ```
 ' OR '1'='1
 ```
-![Unsafe SQL](../SQL-Injection-lesson-Prisma/frontend/src/assets/unsafe1.png)
 
 Returns all users.
+
+![Unsafe SQL](../SQL-Injection-lesson-Prisma/frontend/src/assets/unsafe1.png)
 
 ```
 ' OR admin = true --
@@ -101,11 +102,15 @@ Returns all users.
 
 Returns only admin users.
 
+![Unsafe SQL](../SQL-Injection-lesson-Prisma/frontend/src/assets/unsafe2.png)
+
 ```
 '; DROP TABLE "User"; --
 ```
 
 Attempts to delete the entire users table.
+
+![Unsafe SQL](../SQL-Injection-lesson-Prisma/frontend/src/assets/unsafe3.png)
 
 ---
 
@@ -117,11 +122,15 @@ Prisma uses **parameterized queries**. Instead of building the SQL string with u
 -- Query template (sent first):
 SELECT * FROM "User" WHERE email = $1
 
+![Safe SQL](../SQL-Injection-lesson-Prisma/frontend/src/assets/safe1.png)
+
 -- Value (sent separately):
 $1 = 'whatever the user typed'
 ```
 
 The database never interprets the value as SQL — it's always treated as plain text data. No matter what the user types, it cannot change the structure of the query.
+
+![Safe SQL](../SQL-Injection-lesson-Prisma/frontend/src/assets/safe2.png)
 
 ---
 
