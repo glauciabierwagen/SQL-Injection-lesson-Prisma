@@ -53,21 +53,26 @@ cd backend
 docker compose up -d
 ```
 
-### 2. Set up the database
+### 2. Install backend dependencies
+
+```bash
+npm install
+```
+
+### 3. Set up the database
 
 ```bash
 npx prisma migrate dev
 npx prisma db seed
 ```
 
-### 3. Start the backend
+### 4. Start the backend
 
 ```bash
-npm install
 npm run dev
 ```
 
-### 4. Start the frontend
+### 5. Start the frontend
 
 ```bash
 cd ../frontend
@@ -123,3 +128,9 @@ The database never interprets the value as SQL — it's always treated as plain 
 
 - [OWASP Top 10 — Injection](https://owasp.org/Top10/2025/)
 - [W3Schools — SQL Injection](https://www.w3schools.com/sql/sql_injection.asp)
+- [TSK] (https://tanstack.com/) 
+- [Cosden Solutions] (https://www.youtube.com/@cosdensolutions/videos)
+- [AI] (https://www.youtube.com/watch?v=ZkxZqQRiQCU&t=637s)
+
+
+
